@@ -7,4 +7,13 @@ public class DirectedEdge extends Edge
 		this.v1 = beginVertex;
 		this.v2 = endVertex;
 	}
+
+	public Vertex getVertexBegin()
+	{
+		return this.v1;
+	}
+	public Vertex getVertexEnd()
+	{
+		return this.v2;
+	}
 }
