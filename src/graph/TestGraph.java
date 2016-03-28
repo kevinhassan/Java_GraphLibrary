@@ -1,7 +1,12 @@
 package graph;
 
-public class TestGraph()
+public class TestGraph implements Graph
 {
+	public void setVertex(Vertex v);
+	public void setEdge(Edge e);
+	public Vertex getVertexs();
+	public Edge getEdges();
+	
 	public static void main(String[] args)
 	{
 		Vertex v1 = new Vertex("sommet 1");
