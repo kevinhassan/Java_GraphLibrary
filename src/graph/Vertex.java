@@ -1,19 +1,34 @@
 package graph;
-
+/**
+* The class Vertex is constitued of a name for the identification
+* @param String name
+* @return Vertex
+*/
 public class Vertex()
 {
-	private String nom;
-	
-	public void Vertex(String nom)
+	private String name;
+	/**
+	* Constructor of Vertex class
+	* @param name 
+	*/
+	public void Vertex(String name)
 	{
-		this.nom = nom;
+		this.name = name;
 	}
-	public String getNom()
+	/**
+	* Get the name of Vertex object
+	* @return String 
+	*/
+	public String getName()
 	{
-		return this.nom
+		return this.name
 	}
-	public void setNom(String nom)
+	/**
+	* Set a name to Vertex object
+	* @param name 
+	*/
+	public void setName(String name)
 	{
-		this.nom = nom;
+		this.name = name;
 	}
 }
