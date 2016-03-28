@@ -1,1 +1,3 @@
-graphLibrary
+# GraphLibrary
+Kévin Hassan & Léo Pernelle
+
