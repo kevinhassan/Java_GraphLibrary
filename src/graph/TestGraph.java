@@ -8,5 +8,8 @@ public class TestGraph()
 		Vertex v2 = new Vertex("sommet 2");
 		DirectedEdge e1 = new DirectedEdge(v1,v2);
 		Graph g;
+		g.setVertex(v1);
+		g.setVertex(v2);
+		g.setEdge(e1);
 	}
 }
