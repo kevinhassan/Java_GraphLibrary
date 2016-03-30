@@ -4,7 +4,7 @@ package graph;
 * @param String name
 * @return Vertex
 */
-public class Vertex()
+public class Vertex
 {
 	private String name;
 	/**
