@@ -1,0 +1,16 @@
+package graph;
+/**
+* The abstract class Edge composed of 2 Vertex
+* @param Vertex v1 
+* @param Vertex v2 
+*/
+public abstract class Edge
+{
+	protected Vertex v1;
+	protected Vertex v2;
+
+	public Vertex getVertexV1(){}
+	public Vertex getVertexV2(){}
+	public void setVertexV1(Vertex v1){}
+	public void setVertexV2(Vertex v2){}
+}

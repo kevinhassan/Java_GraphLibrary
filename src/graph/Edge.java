@@ -6,27 +6,23 @@ package graph;
 */
 public abstract class Edge
 {
-	private Vertex v1;
-	private Vertex v2;
-	/**
-	* Returns the vertex v1 of Edge'specific class
-	* @return Vertex
-	*/
-	public Vertex getVertexV1();
-	/**
-	* Returns the vertex v2 of Edge'specific class
-	* @return Vertex
-	*/
-	public Vertex getVertexV2();
-	/**
-	* Set the vertex v1 of Edge'specific class
-	* @param Vertex 
-	*/
-	public void setVertexV1(Vertex v1);
-	/**
-	* Set the vertex v2 of Edge'specific class
-	* @param Vertex 
-	*/	
-	public void setVertexV2(Vertex v2);
+	protected Vertex v1;
+	protected Vertex v2;
 
+	public Vertex getVertexV1()
+	{
+		return this.v1;
+	}
+	public Vertex getVertexV2()
+	{
+		return this.v2;
+	}
+	public void setVertexV1(Vertex v1)
+	{
+		this.v1 = v1;
+	}
+	public void setVertexV2(Vertex v2)
+	{
+		this.v2 = v2;
+	}
 }

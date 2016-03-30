@@ -1,0 +1,36 @@
+package graph;
+/**
+* The class UnDirectedEdge represents an Edge with non specific direction 
+* The Edge is composed of 2 Vertex
+* @param Vertex v1 
+* @param Vertex v2 
+* @return UnDirectedEdge
+*/
+public class UndirectedEdge extends Edge
+{
+	public UndirectedEdge(Vertex v1,Vertex v2)
+	{
+		this.v1 = v1;
+		this.v2 = v2;
+	}
+	/**
+	* Returns the vertex v1 of Edge'specific class
+	* @return Vertex
+	*/
+	public Vertex getVertexV1(){}
+	/**
+	* Returns the vertex v2 of Edge'specific class
+	* @return Vertex
+	*/
+	public Vertex getVertexV2(){}
+	/**
+	* Set the vertex v1 of Edge'specific class
+	* @param Vertex 
+	*/
+	public void setVertexV1(Vertex v1){}
+	/**
+	* Set the vertex v2 of Edge'specific class
+	* @param Vertex 
+	*/	
+	public void setVertexV2(Vertex v2){}
+}

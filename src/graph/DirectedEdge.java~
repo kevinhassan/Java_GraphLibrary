@@ -19,4 +19,26 @@ public class DirectedEdge extends Edge
 		this.v1 = beginVertex;
 		this.v2 = endVertex;
 	}
+	/**
+	* Returns the vertex beginning of the DirectedEdge
+	* @return Vertex 
+	*/
+	public Vertex getVertexV1(){}
+	/**
+	* Returns the vertex end of the DirectedEdge
+	* @return Vertex 
+	*/
+	public Vertex getVertexV2(){}
+	/**
+	* Set the vertex beginning of the DirectedEdge
+	* Change v1 paramater for change beginning
+	* @param v1
+	*/
+	public void setVertexV1(Vertex v1){}
+	/**
+	* Set the vertex end of the DirectedEdge
+	* Change v2 paramater for change end
+	* @param v2
+	*/	
+	public void setVertexV2(Vertex v2){}
 }

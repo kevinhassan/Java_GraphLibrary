@@ -11,24 +11,15 @@ public class Vertex
 	* Constructor of Vertex class
 	* @param name 
 	*/
-	public Vertex(String name)
-	{
-		this.name = name;
-	}
+	public void Vertex(String name){}
 	/**
 	* Get the name of Vertex object
 	* @return String 
 	*/
-	public String getName()
-	{
-		return this.name;
-	}
+	public String getName(){}
 	/**
 	* Set a name to Vertex object
 	* @param name 
 	*/
-	public void setName(String name)
-	{
-		this.name = name;
-	}
+	public void setName(String name){}
 }
