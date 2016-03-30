@@ -21,7 +21,7 @@ public class Vertex()
 	*/
 	public String getName()
 	{
-		return this.name
+		return this.name;
 	}
 	/**
 	* Set a name to Vertex object
