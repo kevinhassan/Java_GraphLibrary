@@ -1,4 +1,5 @@
 package graph;
+import bin.graph.Edge;
 /**
 * The class UnDirectedEdge represents an Edge with non specific direction 
 * The Edge is composed of 2 Vertex

@@ -1,4 +1,5 @@
 package graph;
+import bin.graph.Vertex;
 /**
 * The abstract class Edge composed of 2 Vertex
 * @param Vertex v1 
