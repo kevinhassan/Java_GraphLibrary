@@ -1,7 +1,7 @@
 package graph;
 
-import bin.graph.Vertex;
-import bin.graph.Edge;
+import graph.Vertex;
+import graph.Edge;
 /**
 *	The Graph interface gather all others class in array Structure
 */
@@ -11,12 +11,12 @@ public interface Graph
 	* Add the Vertex to the Vertex arrayList
 	* @param Vertex 
 	*/
-	public void setVertex(Vertex v);
+	public void setVertex(Vertex v) throws MaximumSizeReachedOnVertices;
 	/**
 	* Add the Edge to the Edge array
 	* @param Edge 
 	*/
-	public void setEdge(Edge e);
+	public void setEdge(Edge e) throws NotUndirectedEdge, MaximumSizeReachedOnEdges;
 	/**
 	* Returns the array of Vertex 
 	* @return Vertex 

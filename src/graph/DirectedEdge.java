@@ -1,5 +1,5 @@
 package graph;
-import bin.graph.Edge;
+import graph.Edge;
 /**
 * The class DirectedEdge represents an Edge with a specific direction 
 * The Edge is composed of 2 Vertex
