@@ -1,10 +1,9 @@
 package graph;
 
-import java.util.ArrayList;
+import bin.graph.Vertex;
+import bin.graph.Edge;
 /**
-*	The Graph interface gather all others class in ArrayList Structure
-*	@param vertexs ArrayList composed of Vertex
-*	@param edges ArrayList composed of Edge
+*	The Graph interface gather all others class in array Structure
 */
 public interface Graph
 {
@@ -14,17 +13,17 @@ public interface Graph
 	*/
 	public void setVertex(Vertex v);
 	/**
-	* Add the Edge to the Edge arrayList
+	* Add the Edge to the Edge array
 	* @param Edge 
 	*/
 	public void setEdge(Edge e);
 	/**
-	* Returns the Vertex arrayList
+	* Returns the array of Vertex 
 	* @return Vertex 
 	*/
 	public Vertex[] getVertexs();
 	/**
-	* Returns the Edge arrayList
+	* Returns the array of Edge 
 	* @return Vertex 
 	*/
 	public Edge[] getEdges();
