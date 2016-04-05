@@ -4,7 +4,7 @@ public class ImplementGraph implements graph
 {
 
 	private Vertex[] sommet;
-	private Edge[][] arete
+	private Vertex[][] arete
 
 	public addVertex (Vertex vertex)
 	{
@@ -21,6 +21,10 @@ public class ImplementGraph implements graph
 			Vertex[this.sommet.length()+1] temp = this.sommet;
 			temp[temp.length()-1] = vertex;
 			this.sommet = temp;
+			
+			Vertex[this.sommet.length()+1][this.sommet.length()+1] temp = this.arete;
+			this.arete = temp;
+			
 		}
 	}
 
@@ -63,8 +67,8 @@ public class ImplementGraph implements graph
 		{
 			y = y + 1;
 		}
-			Edge[x][y] = 1;
-			Edge[y][x] = 1;
+			Edge[x][y] = 1; //source
+			Edge[y][x] = 0; //destination
 		}
 	}
 	
@@ -95,7 +99,7 @@ public class ImplementGraph implements graph
 	}
 	
 	
-	public void addDirectedEdge(Vertex source, Vertex destination)
+	public void addUndirectedEdge(Vertex source, Vertex destination)
 	{
 		addVertex(source);
 		addVertex(destination);
@@ -111,8 +115,8 @@ public class ImplementGraph implements graph
 		{
 			y = y + 1;
 		}
-			Edge[x][y] = 1;
-			Edge[y][x] = 1;
+			Edge[x][y] = 1; //source
+			Edge[y][x] = 1;	//source
 		}
 	}
 	
