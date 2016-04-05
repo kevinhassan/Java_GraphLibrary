@@ -1,6 +1,6 @@
-package graph;
+import graph.bin;
 
-public class ImplementGraph implements graph
+public class ImplementGraph implements Graph
 {
 
 	private Vertex[] sommet;
@@ -66,7 +66,7 @@ public class ImplementGraph implements graph
 
 		int x = 0;
 		//On récupére les positions des vertex correspondants
-		while (x<sommet.length()) && (sommet.length() != 0) 
+		while (x<sommet.length()&&sommet.length()!= 0) 
 		{
 			if (sommet[x].equals(source))
 			{
@@ -102,7 +102,7 @@ public class ImplementGraph implements graph
 
 		int x = 0;
 		//On récupére les positions des vertex correspondants
-		while (x<sommet.length()) && (sommet.length() != 0) && (!flag1) && (!flag2)
+		while ((x<sommet.length()) && (sommet.length() != 0) && (!flag1) && (!flag2))
 		{
 			if (sommet[x].equals(source))
 			{
@@ -139,7 +139,7 @@ public class ImplementGraph implements graph
 
 		int x = 0;
 		//On récupére les positions des vertex correspondants
-		while (x<sommet.length()) && (sommet.length() != 0) 
+		while ((x<sommet.length()) && (sommet.length() != 0))
 		{
 			if (sommet[x].equals(source))
 			{
@@ -175,7 +175,7 @@ public class ImplementGraph implements graph
 
 		int x = 0;
 		//On récupére les positions des vertex correspondants
-		while (x<sommet.length()) && (sommet.length() != 0) && (!flag1) && (!flag2)
+		while ((x<sommet.length()) && (sommet.length() != 0) && (!flag1) && (!flag2))
 		{
 			if (sommet[x].equals(source))
 			{
@@ -210,7 +210,7 @@ public class ImplementGraph implements graph
 		if(getDegree(source)>0)
 		{
 			Vertex[] neighbours = new Vertex[getDegree(source)];
-			while (x<sommet.length()) && (sommet.length() != 0) && (!flag)
+			while ((x<sommet.length()) && (sommet.length() != 0) && (!flag))
 			{
 				if (sommet[x].equals(source))
 				{
@@ -250,7 +250,7 @@ public class ImplementGraph implements graph
 		int x = 0;
 		boolean flag = false;
 
-		while (x<sommet.length()) && (sommet.length() != 0) && (!flag)
+		while ((x<sommet.length()) && (sommet.length() != 0) && (!flag))
 		{
 			if (sommet[x].equals(source))
 			{
