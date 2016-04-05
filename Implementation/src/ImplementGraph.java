@@ -10,7 +10,7 @@ public class ImplementGraph implements graph
 	{
 		boolean flag = false;
 		int x = 0;
-		while(x<this.sommet.length() && this.sommet.length() != 0)
+		while((x<this.sommet.length()) && (this.sommet.length() != 0))
 		{
 				if(this.sommet[x].equals(vertex))
 					{flag = true;}
@@ -24,15 +24,15 @@ public class ImplementGraph implements graph
 		}
 	}
 
-	public remove (Vertex vertex)
+	public removeVertex (Vertex vertex)
 	{
 		boolean flag = false;
 		int x = 0;
-		while(x<this.sommet.length() && this.sommet.length() != 0 && !this.sommet[x].equals(vertex))
+		while((x<this.sommet.length()) && (this.sommet.length() != 0) && !this.sommet[x].equals(vertex))
 		{
 				x = x + 1;
 		}
-		if(x==this.sommet.length())
+		if(x!=this.sommet.length())
 		{
 			for(int i = x; i<this.sommet.length();i++)
 			{
@@ -46,4 +46,106 @@ public class ImplementGraph implements graph
 			this.sommet = temp;
 		}
 	}
+	
+	public void addDirectedEdge(Vertex source, Vertex destination)
+	{
+		addVertex(source);
+		addVertex(destination);
+		Edge edge1 = new DirectedEdge(source, destination);
+		
+		boolean flag = false;
+		int x = 0;
+		while((x<this.arete.length()) && (this.arete.length() != 0))
+		{
+				if(this.arete[x].equals(edge1))
+					{flag = true;}
+				x = x + 1;
+		}
+		if(flag == false)
+		{
+			Edge[this.arete.length()+1] temp = this.arete;
+			temp[temp.length()-1] = edge1;
+			this.arete = temp;
+		}
+	}
+	
+	
+	
+	public void removeDirectedEdge(Vertex source, Vertex destination)
+	{
+		Edge edge1 = new DirectedEdge(source, destination);
+		boolean flag = false;
+		int x = 0;
+		while((x<this.arete.length()) && (this.arete.length() != 0) && !this.arete[x].equals(edge1))
+		{
+				x = x + 1;
+		}
+		if(x!=this.arete.length())
+		{
+			for(int i = x; i<this.arete.length();i++)
+			{
+				this.arete[i]=this.arete[i+1];
+			}
+			Edge[this.arete.length()-1] temp;
+			for(i = 0; i<temp.length();i++)
+			{
+				temp[i]=this.arete[i];
+			}
+			this.arete = temp;
+		}
+	}
+	
+	
+	public void addUndirectedEdge(Vertex source, Vertex destination)
+	{
+		addVertex(source);
+		addVertex(destination);
+		Edge edge1 = new UndirectedEdge(source, destination);
+		Edge edge2 = new UndirectedEdge(source, destination);
+		
+		boolean flag = false;
+		int x = 0;
+		while((x<this.arete.length()) && (this.arete.length() != 0))
+		{
+				if(this.arete[x].equals(edge1) && this.arete[x].equals(edge2))
+					{flag = true;}
+				x = x + 1;
+		}
+		if(flag == false)
+		{
+			Edge[this.arete.length()+1] temp = this.arete;
+			temp[temp.length()-1] = edge1;
+			this.arete = temp;
+		}
+	}
+	
+	
+	
+	public void RemoveUndirectedEdge(Vertex source, Vertex destination)
+	{
+		Edge edge1 = new UndirectedEdge(source, destination);
+		Edge edge2 = new UndirectedEdge(source, destination);
+		boolean flag = false;
+		int x = 0;
+		while(x<this.arete.length() && (this.arete.length() != 0) && !this.arete[x].equals(edge1) && !this.arete[x].equals(edge2))
+		{
+				x = x + 1;
+		}
+		if(x!=this.arete.length())
+		{
+			for(int i = x; i<this.arete.length();i++)
+			{
+				this.arete[i]=this.arete[i+1];
+			}
+			Edge[this.arete.length()-1] temp;
+			for(i = 0; i<temp.length();i++)
+			{
+				temp[i]=this.arete[i];
+			}
+			this.arete = temp;
+		}
+	}
+	
+	
+	
 }
