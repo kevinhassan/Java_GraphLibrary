@@ -4,7 +4,7 @@ public class ImplementGraph implements graph
 {
 
 	private Vertex[] sommet;
-	private Edge[] arete
+	private Edge[][] arete
 
 	public addVertex (Vertex vertex)
 	{
@@ -51,21 +51,20 @@ public class ImplementGraph implements graph
 	{
 		addVertex(source);
 		addVertex(destination);
-		Edge edge1 = new DirectedEdge(source, destination);
 		
 		boolean flag = false;
 		int x = 0;
-		while((x<this.arete.length()) && (this.arete.length() != 0))
+		int y = 0;
+		while((x<this.sommet.length()) && (this.sommet.length() != 0) && this.sommet[x].equals(source))
 		{
-				if(this.arete[x].equals(edge1))
-					{flag = true;}
-				x = x + 1;
+			x = x + 1;
 		}
-		if(flag == false)
+		while((y<this.sommet.length()) && (this.sommet.length() != 0) && this.sommet[y].equals(destination))
 		{
-			Edge[this.arete.length()+1] temp = this.arete;
-			temp[temp.length()-1] = edge1;
-			this.arete = temp;
+			y = y + 1;
+		}
+			Edge[x][y] = 1;
+			Edge[y][x] = 1;
 		}
 	}
 	
@@ -96,26 +95,24 @@ public class ImplementGraph implements graph
 	}
 	
 	
-	public void addUndirectedEdge(Vertex source, Vertex destination)
+	public void addDirectedEdge(Vertex source, Vertex destination)
 	{
 		addVertex(source);
 		addVertex(destination);
-		Edge edge1 = new UndirectedEdge(source, destination);
-		Edge edge2 = new UndirectedEdge(source, destination);
 		
 		boolean flag = false;
 		int x = 0;
-		while((x<this.arete.length()) && (this.arete.length() != 0))
+		int y = 0;
+		while((x<this.sommet.length()) && (this.sommet.length() != 0) && this.sommet[x].equals(source))
 		{
-				if(this.arete[x].equals(edge1) && this.arete[x].equals(edge2))
-					{flag = true;}
-				x = x + 1;
+			x = x + 1;
 		}
-		if(flag == false)
+		while((y<this.sommet.length()) && (this.sommet.length() != 0) && this.sommet[y].equals(destination))
 		{
-			Edge[this.arete.length()+1] temp = this.arete;
-			temp[temp.length()-1] = edge1;
-			this.arete = temp;
+			y = y + 1;
+		}
+			Edge[x][y] = 1;
+			Edge[y][x] = 1;
 		}
 	}
 	
