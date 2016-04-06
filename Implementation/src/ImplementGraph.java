@@ -10,23 +10,37 @@ public class ImplementGraph implements Graph
 	{
 		boolean flag = false;
 		int x = 0;
-		while(x<sommet.length && sommet.length != 0)
-		{
-			if(sommet[x].equals(vertex))
+		if(sommet != null){
+			/*while(x<sommet.length && sommet.length != 0)
 			{
-				flag = true;
+				if(sommet[x].equals(vertex))
+				{
+					flag = true;
+				}
+				x = x + 1;
+			}//On cherche le vertex s'il est présent*/
+			if(flag == false)
+			{
+				Vertex[] temp1 = new Vertex[sommet.length+1];
+
+				for(int i = 0; i<sommet.length;i++)
+				{
+					temp1[i] = sommet[i];//On augmente la taille du tableau
+				}
+				temp1[temp1.length-1] = vertex;//On ajoute l'éléments
+				sommet = temp1;//On modifie l'attribut
+				
+				Edge[][] temp2 = new Edge[sommet.length+1][sommet.length+1];//A chaque ajout de point notre matrice augmente le nbr de colonne et ligne
+				matIncid = temp2;
 			}
-			x = x + 1;
-		}//On cherche le vertex s'il est présent
-		if(flag == false)
+		}
+		else
 		{
-			Vertex[] temp1 = new Vertex[sommet.length+1];
-			temp1 = sommet;//On augmente la taille du tableau
-			temp1[temp1.length-1] = vertex;//On ajoute l'éléments
-			sommet = temp1;//On modifie l'attribut
-			
-			Edge[][] temp2 = new Edge[sommet.length+1][sommet.length+1];//A chaque ajout de point notre matrice augmente le nbr de colonne et ligne
-			matIncid = temp2;
+			Vertex[] v = new Vertex[1];
+			v[0] = vertex;
+			sommet = v;
+			Edge[][] temp3 = new Edge[1][1];
+			matIncid = temp3;
 		}
 	}
 
@@ -57,8 +71,6 @@ public class ImplementGraph implements Graph
 	
 	public void addDirectedEdge(Vertex source, Vertex destination)
 	{
-		this.addVertex(source);
-		this.addVertex(destination);
 
 		DirectedEdge e = new DirectedEdge(source,destination);
 		int posV1 = 0;
@@ -130,8 +142,6 @@ public class ImplementGraph implements Graph
 	
 	public void addUndirectedEdge(Vertex source, Vertex destination)
 	{
-		this.addVertex(source);
-		this.addVertex(destination);
 
 		UndirectedEdge e = new UndirectedEdge(source,destination);
 		int posV1 = 0;
@@ -202,9 +212,9 @@ public class ImplementGraph implements Graph
 	}	
 	public Vertex[] getNeighbours(Vertex source)
 	{
-		int degree = 0;
 		int posV = 0;
 		int x = 0;
+		int y =0;
 		boolean flag = false;
 		Vertex[] neighbours = new Vertex[getDegree(source)];
 		//S'il est relié à un point => avoir un voisin => degré >0
@@ -228,7 +238,8 @@ public class ImplementGraph implements Graph
 					//Si on trouve un edge => qu'il a un sommet relié à lui 
 					if(matIncid[posV][i] !=null)
 					{
-						neighbours[i] = sommet[i];
+						neighbours[y] = sommet[i];
+						y++;
 					}
 				}
 			}
@@ -246,25 +257,22 @@ public class ImplementGraph implements Graph
 	public int getDegree(Vertex source)
 	{
 		int degree = 0;
-		int posV = 0;
 		int x = 0;
 		boolean flag = false;
 
-		while ((x<sommet.length) && (sommet.length != 0) && (!flag))
+		while (x<sommet.length && !sommet[x].equals(source))
 		{
-			if (sommet[x].equals(source))
-			{
-				flag = true;
-				posV = x;
-			}	
 			x = x + 1;					
-		}	
-		if(flag == true)	
+		}
+
+		if(x == sommet.length){System.out.println("Vertex inconnu");}	
+		
+		else if(sommet[x].equals(source))	
 		{
 			for(int i=0;i<sommet.length;i++)
 			{
 				//Si on trouve un edge => qu'il a un sommet relié à lui 
-				if(matIncid[posV][i] !=null)
+				if(matIncid[x][i] != null)
 				{
 					degree ++;
 				}
