@@ -1,4 +1,4 @@
-import graph.bin;
+package graph;
 
 public class ImplementGraph implements Graph
 {
@@ -10,7 +10,7 @@ public class ImplementGraph implements Graph
 	{
 		boolean flag = false;
 		int x = 0;
-		while((x<sommet.length()) && (sommet.length() != 0))
+		while(x<sommet.length && sommet.length != 0)
 		{
 			if(sommet[x].equals(vertex))
 			{
@@ -20,13 +20,13 @@ public class ImplementGraph implements Graph
 		}//On cherche le vertex s'il est présent
 		if(flag == false)
 		{
-			Vertex[] temp = new Vertex[sommet.length()+1];
-			temp = sommet;//On augmente la taille du tableau
-			temp[temp.length()-1] = vertex;//On ajoute l'éléments
-			sommet = temp;//On modifie l'attribut
+			Vertex[] temp1 = new Vertex[sommet.length+1];
+			temp1 = sommet;//On augmente la taille du tableau
+			temp1[temp1.length-1] = vertex;//On ajoute l'éléments
+			sommet = temp1;//On modifie l'attribut
 			
-			Edge[] temp = new Edge[sommet.length()+1][sommet.length()+1];//A chaque ajout de point notre matrice augmente le nbr de colonne et ligne
-			matIncid = temp;
+			Edge[][] temp2 = new Edge[sommet.length+1][sommet.length+1];//A chaque ajout de point notre matrice augmente le nbr de colonne et ligne
+			matIncid = temp2;
 		}
 	}
 
@@ -34,19 +34,19 @@ public class ImplementGraph implements Graph
 	{
 		boolean flag = false;
 		int x = 0;
-		while((x<sommet.length()) && (sommet.length() != 0) && !sommet[x].equals(vertex))
+		while((x<sommet.length) && (sommet.length != 0) && !sommet[x].equals(vertex))
 		{
 			x = x + 1;
 		}
 		//On trouve le vertex
-		if(x!=sommet.length())
+		if(x!=sommet.length)
 		{
-			for(int i = x; i<sommet.length();i++)
+			for(int i = x; i<sommet.length;i++)
 			{
 				sommet[i]=sommet[i+1];
 			}
-			Vertex[] temp = new Vertex[sommet.length()-1];
-			for(int i = 0; i<temp.length();i++)
+			Vertex[] temp = new Vertex[sommet.length-1];
+			for(int i = 0; i<temp.length;i++)
 			{
 				temp[i]=sommet[i];
 			}
@@ -66,7 +66,7 @@ public class ImplementGraph implements Graph
 
 		int x = 0;
 		//On récupére les positions des vertex correspondants
-		while (x<sommet.length()&&sommet.length()!= 0) 
+		while (x<sommet.length&&sommet.length!= 0) 
 		{
 			if (sommet[x].equals(source))
 			{
@@ -102,7 +102,7 @@ public class ImplementGraph implements Graph
 
 		int x = 0;
 		//On récupére les positions des vertex correspondants
-		while ((x<sommet.length()) && (sommet.length() != 0) && (!flag1) && (!flag2))
+		while ((x<sommet.length) && (sommet.length != 0) && (!flag1) && (!flag2))
 		{
 			if (sommet[x].equals(source))
 			{
@@ -139,7 +139,7 @@ public class ImplementGraph implements Graph
 
 		int x = 0;
 		//On récupére les positions des vertex correspondants
-		while ((x<sommet.length()) && (sommet.length() != 0))
+		while ((x<sommet.length) && (sommet.length != 0))
 		{
 			if (sommet[x].equals(source))
 			{
@@ -175,7 +175,7 @@ public class ImplementGraph implements Graph
 
 		int x = 0;
 		//On récupére les positions des vertex correspondants
-		while ((x<sommet.length()) && (sommet.length() != 0) && (!flag1) && (!flag2))
+		while ((x<sommet.length) && (sommet.length != 0) && (!flag1) && (!flag2))
 		{
 			if (sommet[x].equals(source))
 			{
@@ -206,11 +206,11 @@ public class ImplementGraph implements Graph
 		int posV = 0;
 		int x = 0;
 		boolean flag = false;
+		Vertex[] neighbours = new Vertex[getDegree(source)];
 		//S'il est relié à un point => avoir un voisin => degré >0
 		if(getDegree(source)>0)
 		{
-			Vertex[] neighbours = new Vertex[getDegree(source)];
-			while ((x<sommet.length()) && (sommet.length() != 0) && (!flag))
+			while ((x<sommet.length) && (sommet.length != 0) && (!flag))
 			{
 				if (sommet[x].equals(source))
 				{
@@ -220,10 +220,10 @@ public class ImplementGraph implements Graph
 				x = x + 1;					
 			}
 			//On a trouvé l'élément
-			if (x!=sommet.length())
+			if (x!=sommet.length)
 			{
 				//On parcourt 
-				for(int i=0;i<sommet.length();i++)
+				for(int i=0;i<sommet.length;i++)
 				{
 					//Si on trouve un edge => qu'il a un sommet relié à lui 
 					if(matIncid[posV][i] !=null)
@@ -231,7 +231,6 @@ public class ImplementGraph implements Graph
 						neighbours[i] = sommet[i];
 					}
 				}
-				return neighbours;
 			}
 			else
 			{
@@ -242,6 +241,7 @@ public class ImplementGraph implements Graph
 		{
 			System.out.println("Vertex doesn't have neighbours");
 		}
+		return neighbours;
 	}
 	public int getDegree(Vertex source)
 	{
@@ -250,7 +250,7 @@ public class ImplementGraph implements Graph
 		int x = 0;
 		boolean flag = false;
 
-		while ((x<sommet.length()) && (sommet.length() != 0) && (!flag))
+		while ((x<sommet.length) && (sommet.length != 0) && (!flag))
 		{
 			if (sommet[x].equals(source))
 			{
@@ -261,7 +261,7 @@ public class ImplementGraph implements Graph
 		}	
 		if(flag == true)	
 		{
-			for(int i=0;i<sommet.length();i++)
+			for(int i=0;i<sommet.length;i++)
 			{
 				//Si on trouve un edge => qu'il a un sommet relié à lui 
 				if(matIncid[posV][i] !=null)

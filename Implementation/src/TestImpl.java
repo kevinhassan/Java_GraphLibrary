@@ -15,8 +15,8 @@ public class TestImpl
 		g.addVertex(v4);
 		UndirectedEdge dirE = new UndirectedEdge(v1,v2);
 		DirectedEdge undirE = new DirectedEdge(v3,v4);
-		g.addDirectedEdge(dirE);
-		g.addUndirectedEdge(undirE);
-		Vertex[] v = getNeighbours(v1); 
+		g.addDirectedEdge(v1,v2);
+		g.addUndirectedEdge(v3,v4);
+		Vertex[] v = g.getNeighbours(v1); 
 	}
 }
