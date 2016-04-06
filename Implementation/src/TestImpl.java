@@ -2,7 +2,7 @@ package graph;
 
 public class TestImpl 
 {
-	public void main(String[] args)
+	public static void main(String[] args)
 	{
 		ImplementGraph g = new ImplementGraph();
 		Vertex v1 = new Vertex();
